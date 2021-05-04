@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImovelController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,5 +16,5 @@
 |
 */
 
-Route::get('/imoveis/remove/', 'ImovelController@remover')->name('imoveis.remove');
-Route::resource('imoveis', 'ImovelController');
+Route::get('/imoveis/remove/{id}', 'App\Http\Controllers\ImovelController@remover')->name('imoveis.remove');
+Route::resource('imoveis', ImovelController::class);
